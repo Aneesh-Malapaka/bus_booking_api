@@ -1,7 +1,6 @@
 const express = require("express");
 const session = require("express-session");
 const cors = require("cors");
-// const mongoose = require("mongoose");
 const MySQLStore = require("express-mysql-session")(session);
 
 const db = require("./db");
@@ -34,7 +33,7 @@ const sessionStore = new MySQLStore(
 app.use(
   session({
     //secret is a version 4 uuid
-    secret: "16bc7ad0-de6f-41b1-8090-ddf50253f20a",
+    secret: "your-secret-key",
     resave: false,
     saveUninitialized: true,
     store: sessionStore,
